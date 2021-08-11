@@ -25,6 +25,6 @@ Route::get('/featured-products', [ProductController::class, 'featuredProducts'])
 //  tất cả sản phẩm
 Route::get('/products', [ProductController::class, 'index'])->name('product.list');
 // sản phẩm theo danh mục
-Route::get('/category/{category}', [ProductController::class, 'productByCategory'])->name('category.product.list');
+Route::get('/category/{category}/products', [ProductController::class, 'productByCategory'])->name('category.product.list');
 // Chi tiết 1 sản phẩm
 Route::get('/product/{product}', [ProductController::class, 'show'])->name('product.detail');
