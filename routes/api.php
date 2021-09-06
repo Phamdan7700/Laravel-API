@@ -20,13 +20,13 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-// tất cả danh mục sản phẩm 
+// Categories
 Route::get('/categories', [CategoryController::class, 'index'])->name('category.list');
-// sản phẩm nổi bật
+// Featured products
 Route::get('/featured-products', [ProductController::class, 'featuredProducts'])->name('product.featured');
-//  tất cả sản phẩm
+//  Products
 Route::get('/products', [ProductController::class, 'index'])->name('product.list');
-// sản phẩm theo danh mục
+// Product by category
 Route::get('/category/{category}/products', [ProductController::class, 'productByCategory'])->name('category.product.list');
-// Chi tiết 1 sản phẩm
+// Detail of product
 Route::get('/product/{product}', [ProductController::class, 'show'])->name('product.detail');
